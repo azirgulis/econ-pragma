@@ -41,6 +41,7 @@
     <nav>
         <a href="#support">Support</a>
         <a href="#privacy">Privacy Policy</a>
+        <a href="app/?src=support">Get the app</a>
     </nav>
 
     <div class="section" id="support">
@@ -63,7 +64,7 @@
 
     <div class="section" id="privacy">
         <h1>Privacy Policy for Econ Pragma</h1>
-        <p><strong>Last Updated: June 24, 2026</strong></p>
+        <p><strong>Last Updated: October 24, 2026</strong></p>
 
         <p>Econ Pragma ("we," "us," or "our") is an educational game designed to teach economics through interactive play. We are committed to protecting your privacy and ensuring transparency about how we handle your information. This Privacy Policy explains our practices, which emphasize minimal data collection, anonymous use, and no advertising.</p>
 
@@ -78,13 +79,14 @@
         <h3>Game &amp; Usage Data</h3>
         <ul>
             <li><strong>Game Progress:</strong> Your lesson completion, stars, streaks, in-game currency, and similar progress, stored on your device and backed up to the cloud (Firebase Firestore) under your anonymous ID.</li>
-            <li><strong>Analytics Data:</strong> Anonymous, aggregated usage information such as screen views, lessons started and completed, and feature usage, collected via Firebase Analytics to help us improve the game.</li>
+            <li><strong>Analytics Data:</strong> Usage events such as screens viewed, lessons started and completed, and features used, collected via Google Analytics for Firebase to help us improve the game. They are tied to a random app-instance identifier, not to your name or contact details. Google may infer an approximate (city-level) location from your IP address.</li>
         </ul>
 
         <h3>Technical Data</h3>
         <ul>
             <li><strong>Local Storage:</strong> Your progress, settings, and preferences are cached locally on your device so the game works smoothly and offline.</li>
-            <li><strong>Network Data:</strong> An internet connection is used for cloud backup, analytics, and loading fonts; the core lessons can be played offline.</li>
+            <li><strong>Network Data:</strong> An internet connection is used for cloud backup, analytics, crash reports, and loading fonts; the core lessons can be played offline.</li>
+            <li><strong>Crash Reports:</strong> If the app crashes or hits an error, a crash report (app version, device model, operating system version, and the technical details of the error) is sent via Firebase Crashlytics so we can fix it. It is tied to a random installation identifier, not to your name or any contact information.</li>
         </ul>
 
         <h2>2. How We Use Your Information</h2>
@@ -98,7 +100,7 @@
         <h2>3. Third-Party Services</h2>
         <p>We use the following third-party services to operate Econ Pragma:</p>
         <ul>
-            <li><strong>Firebase (Google):</strong> For anonymous authentication, cloud progress backup (Firestore), and analytics.</li>
+            <li><strong>Firebase (Google):</strong> For anonymous authentication, cloud progress backup (Firestore), analytics, and crash reporting (Crashlytics).</li>
             <li><strong>Google Fonts:</strong> To load the fonts used in the app's design.</li>
         </ul>
         <p>These services process data on our behalf under their own privacy and security terms. We do not sell or share your information beyond what is necessary to provide these features.</p>
@@ -106,7 +108,7 @@
         <h2>4. Key Privacy Commitments</h2>
         <ul>
             <li><strong>Anonymous by Default:</strong> You can play without creating an account or providing any personal information.</li>
-            <li><strong>No Personal Information Required:</strong> We do not collect your name, email, phone number, or location.</li>
+            <li><strong>No Personal Information Required:</strong> We do not collect your name, email, phone number, or precise location.</li>
             <li><strong>No Advertising:</strong> Econ Pragma does not show third-party ads or share data with advertising networks.</li>
             <li><strong>No Microphone or Camera:</strong> The app plays sound effects only; it does not record audio or access your camera.</li>
             <li><strong>No Selling of Data:</strong> We never sell your data.</li>
@@ -115,7 +117,9 @@
 
         <h2>5. Permissions Explained</h2>
         <ul>
-            <li><strong>Internet/Network:</strong> Used for cloud backup, analytics, and loading fonts.</li>
+            <li><strong>Internet/Network:</strong> Used for cloud backup, analytics, crash reports, and loading fonts.</li>
+            <li><strong>Notifications (optional):</strong> Learning reminders, scheduled on your device and only if you allow them. On Android the app also restores these reminders after your phone restarts.</li>
+            <li><strong>Vibration:</strong> Haptic feedback during play, which you can switch off in the app's Settings.</li>
         </ul>
 
         <h2>6. Children's Privacy</h2>
@@ -127,8 +131,9 @@
         <h2>8. Your Choices and Control</h2>
         <ul>
             <li>You can stop all data collection by uninstalling the app.</li>
-            <li>You can request deletion of the cloud backup associated with your anonymous ID by contacting us (please include any in-app identifier if available).</li>
-            <li>You can limit analytics by disabling background app activity in your device settings.</li>
+            <li>Settings &rarr; Reset Progress clears your lesson progress on your device and in the cloud backup.</li>
+            <li>You can request deletion of your whole cloud backup by contacting us. The app has no accounts, so please include your device model and roughly when you installed the app so we can find it.</li>
+            <li>Deleting and reinstalling the app gives it a new random identifier.</li>
         </ul>
 
         <h2>9. Changes to This Policy</h2>

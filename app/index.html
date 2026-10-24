@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Econ Pragma: economics you play</title>
+<meta name="description" content="Learn economics by playing: guess first, run the market, see how close you were. 30 lessons, a daily case and mini-games. Free on iPhone and iPad.">
+<meta name="apple-itunes-app" content="app-id=6782090131">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://azirgulis.github.io/econ-pragma/app/">
+<meta property="og:title" content="Econ Pragma: economics you play, not read">
+<meta property="og:description" content="Guess first, run the market, see how close you were. 30 lessons, a daily case and mini-games. Free on iPhone and iPad.">
+<meta property="og:image" content="https://azirgulis.github.io/econ-pragma/app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2317212B'/%3E%3Cpath d='M16 5l9 11-9 11-9-11z' fill='%23DDB66A'/%3E%3C/svg%3E">
+<script>
+  // Phones go straight to their store; everything else sees the page.
+  // ?src= names where the link was shared from (store campaign / referrer).
+  (function () {
+    var APP_STORE = 'https://apps.apple.com/app/id6782090131';
+    var PROVIDER = '127448602';
+    // Set to the Google Play listing once Pragma is live there:
+    // 'https://play.google.com/store/apps/details?id=org.kastalia.pragma'
+    var PLAY = null;
+    // No ?src= means a result shared from inside the app.
+    var src = (new URLSearchParams(location.search).get('src') || 'share')
+      .replace(/[^a-z0-9_-]/gi, '').slice(0, 40) || 'share';
+    var apple = APP_STORE + '?pt=' + PROVIDER + '&ct=' + src + '&mt=8';
+    var play = PLAY && PLAY + '&referrer=' +
+      encodeURIComponent('utm_source=' + src + '&utm_medium=link');
+    var ua = navigator.userAgent;
+    var ios = /iPhone|iPad|iPod/.test(ua) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (ios) { location.replace(apple); return; }
+    if (play && /Android/.test(ua)) { location.replace(play); return; }
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('[data-store=apple]').forEach(function (a) {
+        a.href = apple;
+      });
+    });
+  })();
+</script>
+<style>
+  /* Self-hosted (OFL, see fonts/OFL.txt): no requests to third parties. */
+  @font-face {
+    font-family: 'Big Shoulders Display';
+    src: url('fonts/BigShouldersDisplay-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Source Sans 3';
+    src: url('fonts/SourceSans3-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Source Sans 3';
+    src: url('fonts/SourceSans3-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+  }
+  :root {
+    --ink: #17212B;
+    --ink-deep: #0E151C;
+    --brass: #A87A2A;
+    --brass-bright: #DDB66A;
+    --porcelain: #ECE6DA;
+    --porcelain-dim: #CFC7B8;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--ink-deep); }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--porcelain);
+    font: 400 18px/1.55 'Source Sans 3', system-ui, sans-serif;
+    background:
+      repeating-conic-gradient(from -7.5deg at 50% -8%,
+        rgba(221, 182, 106, 0.07) 0deg 8deg, transparent 8deg 15deg),
+      linear-gradient(var(--ink), var(--ink-deep));
+    background-attachment: fixed;
+  }
+  main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 72px 16px 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (min-width: 860px) {
+    main { grid-template-columns: 1.05fr 1fr; padding-top: 96px; gap: 32px; }
+  }
+  h1 {
+    margin: 0;
+    font: 900 clamp(64px, 15vw, 116px)/0.95 'Big Shoulders Display', Impact, sans-serif;
+    color: var(--brass-bright);
+    letter-spacing: 0.5px;
+  }
+  .rule {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 22px 0 20px;
+  }
+  .rule::before {
+    content: '';
+    width: 132px;
+    height: 3px;
+    background: var(--brass);
+  }
+  .rule::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: var(--brass-bright);
+    transform: rotate(45deg);
+  }
+  .tagline {
+    margin: 0 0 14px;
+    font-size: clamp(28px, 6vw, 40px);
+    font-weight: 600;
+    line-height: 1.15;
+  }
+  .lede {
+    margin: 0 0 32px;
+    max-width: 30em;
+    color: var(--porcelain-dim);
+  }
+  .key {
+    display: inline-block;
+    padding: 15px 28px 13px;
+    border-radius: 14px;
+    background: var(--brass-bright);
+    color: var(--ink-deep);
+    font-weight: 600;
+    font-size: 19px;
+    text-decoration: none;
+    border-bottom: 5px solid var(--brass);
+    transition: transform 80ms, border-bottom-width 80ms;
+  }
+  .key:hover { background: #E5C27E; }
+  .key:active { transform: translateY(4px); border-bottom-width: 1px; }
+  .key:focus-visible { outline: 3px solid var(--porcelain); outline-offset: 4px; }
+  .note { margin: 14px 0 0; font-size: 16px; color: var(--porcelain-dim); }
+  .phones {
+    position: relative;
+    /* Fits both screens: each is 54% wide and 2.17 times as tall. */
+    aspect-ratio: 1 / 1.32;
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .phones img {
+    position: absolute;
+    width: 54%;
+    height: auto;
+    border: 4px solid var(--brass-bright);
+    border-radius: 30px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    background: var(--ink-deep);
+  }
+  .phones .back { left: 0; top: 10%; border-color: var(--brass); }
+  .phones .front { right: 0; top: 0; }
+  footer {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 8px 16px 40px;
+    font-size: 15px;
+    color: var(--porcelain-dim);
+  }
+  footer { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+  footer a { color: var(--brass-bright); }
+  @media (prefers-reduced-motion: reduce) {
+    .key { transition: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <section>
+    <h1>Econ Pragma</h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="tagline">Economics you play, not read.</p>
+    <p class="lede">Guess first, run the market, then see how close you were. Thirty lessons in five acts take you from scarcity to inflation, with a short scored Daily Case every day and a mine to dig in between.</p>
+    <a class="key" data-store="apple" href="https://apps.apple.com/app/id6782090131">Get Pragma for iPhone and iPad</a>
+    <p class="note">Free on the App Store. No ads.</p>
+  </section>
+  <div class="phones">
+    <img class="back" src="shot-market.webp" width="540" height="1173" alt="A lesson: guess how many customers buy lemonade at $5, then run the stand.">
+    <img class="front" src="shot-daily.webp" width="540" height="1173" alt="The Daily Case: today it is Price Hunt, find the best price in about two minutes.">
+  </div>
+</main>
+<footer>
+  <a href="../">Support and privacy</a>
+  <span>© 2026 Aras Zirgulis</span>
+</footer>
+</body>
+</html>
